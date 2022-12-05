@@ -7,7 +7,7 @@ This repo provides the source code of our paper: Pair-Based Joint Encoding with 
 Reference environment settings:
 ```
 python             3.8.5
-torch              1.9.0+cu11.1
+pytorch            1.9.0+cu11.1
 transformers       4.9.2
 dgl                0.8.2+cuda11.1
 tqdm
