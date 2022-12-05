@@ -216,7 +216,6 @@ class Network(nn.Module):
         loss = torch.mean(torch.cosine_similarity(feature_emo, feature_cau))
         return loss
 
-    """分布softmax loss，平均，bug修复，目前sota"""
     def loss_cross(self, pred_e, pred_c, couples_pred, emo_cau_pos, doc_len_b, doc_couples_b):
         pred_e = F.sigmoid(pred_e)
         pred_c = F.sigmoid(pred_c)

@@ -62,7 +62,6 @@ def main(configs, fold_id, args):
     early_stop_flag = None
 
     emotional_clauses = read_b(os.path.join('..', DATA_DIR, SENTIMENTAL_CLAUSE_DICT))
-    best_epoch = 0
 
     for epoch in range(1, configs.epochs + 1):
         with tqdm(desc='Training', total=len(train_loader)) as pbar:
@@ -94,7 +93,6 @@ def main(configs, fold_id, args):
                 test_ec, test_e, test_c, metric_emo, metric_cau = inference_one_epoch(configs, test_loader, model, emotional_clauses)
                 if test_ec[2] > metric_ec[2]:
                     metric_ec, metric_e, metric_c = test_ec, test_e, test_c
-                    best_epoch = epoch
             if configs.split == 'split20':
                 valid_ec, valid_e, valid_c, metric_emo, metric_cau = inference_one_epoch(configs, valid_loader, model, emotional_clauses)
                 test_ec, test_e, test_c, metric_emo, metric_cau = inference_one_epoch(configs, test_loader, model, emotional_clauses)
@@ -104,8 +102,6 @@ def main(configs, fold_id, args):
                     metric_ec, metric_e, metric_c = test_ec, test_e, test_c
                 else:
                     early_stop_flag += 1
-
-    print('=====best epoch: {}====='.format(best_epoch))
     return metric_ec, metric_e, metric_c
 
 

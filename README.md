@@ -1,2 +1,3 @@
 # PBJE-ECPE
-Coming soon!
+
+More detailed information will be coming soon!
