@@ -18,7 +18,7 @@ scipy              1.5.2
 ### Step 1: Download the Bert-base-chinese
 Please download the Bert-base-chinese from [here](https://huggingface.co/bert-base-chinese). And put the files to
 ```
-/src/bert-base-chinese/
+./src/bert-base-chinese/
 ```
 
 ### Step 2: Train the model
